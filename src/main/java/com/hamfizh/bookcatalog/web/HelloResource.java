@@ -1,4 +1,22 @@
 package com.hamfizh.bookcatalog.web;
 
+import com.hamfizh.bookcatalog.service.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class HelloResource {
+
+    private final GreetingService greetingService;
+
+    @Autowired
+    public HelloResource(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    @GetMapping("/hello")
+    public String helloWorld(){
+        return greetingService.sayGreeing();
+    }
 }
