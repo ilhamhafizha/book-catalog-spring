@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: book-catalog
+  profiles:
+    active: development
+
+server:
+  port: 8081
+
+---
+spring:
+  config:
+    activate:
+      on-profile: development
+
+app:
+  welcome-text: custom property binding
+  currency: IDR
+  timezone: Asia/Jakarta
+
+#spring:
+#  config:
+#    activate:
+#      on-profile: staging
+#
+#app:
+#  welcome-text: custom property binding (Staging)
+#  currency: IDR
+#  timezone: Asia/Jakarta
+#
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: production
+#
+#app:
+#  welcome-text: custom property binding (Production)
+#  currency: IDR
+#  timezone: Asia/Jakarta
