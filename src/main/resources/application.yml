@@ -18,6 +18,15 @@ app:
   currency: IDR
   timezone: Asia/Jakarta
 
+logging:
+  level:
+    com:
+      hamfizh:
+        bookcatalog:
+          web: TRACE
+
+
+
 #spring:
 #  config:
 #    activate:
