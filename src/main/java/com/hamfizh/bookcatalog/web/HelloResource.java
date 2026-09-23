@@ -2,17 +2,17 @@ package com.hamfizh.bookcatalog.web;
 
 import com.hamfizh.bookcatalog.service.GreetingService;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 public class HelloResource {
 
-    Logger logger = LoggerFactory.getLogger(HelloResource.class);
+//    Log Log = LogFactory.getLog(HelloResource.class);
 
     private final GreetingService greetingService;
 
@@ -23,10 +23,10 @@ public class HelloResource {
 
     @GetMapping("/hello")
     public String helloWorld(){
-        logger.error("Hello World!");
-        logger.info("Hello World!");
-        logger.warn("Hello World!");
-        logger.debug("Heloo Word");
+        log.error("Hello World!");
+        log.info("Hello World!");
+        log.warn("Hello World!");
+        log.debug("Heloo Word");
         return greetingService.sayGreeing();
     }
 }
