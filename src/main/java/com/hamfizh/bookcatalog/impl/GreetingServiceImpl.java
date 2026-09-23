@@ -30,7 +30,7 @@ public class GreetingServiceImpl implements GreetingService {
 //        return this.welcomeText+" Your Time : " + timezone + ", Your Currency: " + currency;
 
         Author author = new Author();
-        author.setId(1L);
+//        author.setId(1L);
         author.setName("Hamfizh");
         return applicationProperties.getWelcomeText() +
                 " Your Time ZONE " + applicationProperties.getTimezone() +

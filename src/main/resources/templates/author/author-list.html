@@ -6,10 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Create Result</h1>
-    <p>Name: <span th:text="${authorDTO.name}"></span></p>
-    <p>Description:  <span th:text="${authorDTO.description}"></span></p>
+    <h1>Author List</h1>
+    <ul th:each="author : ${authors}">
+        <li th:text="${author.name}"></li>
+    </ul>
 
-    <a th:href="@{/author/new}" >Create Author</a>
+    <a th:href="@{/author/new}" >Create Author New</a>
 </body>
 </html>

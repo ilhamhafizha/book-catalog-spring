@@ -7,6 +7,13 @@ spring:
 server:
   port: 8081
 
+logging:
+  level:
+    com:
+      hamfizh:
+        bookcatalog:
+          web: TRACE
+
 ---
 spring:
   config:
@@ -18,12 +25,7 @@ app:
   currency: IDR
   timezone: Asia/Jakarta
 
-logging:
-  level:
-    com:
-      hamfizh:
-        bookcatalog:
-          web: TRACE
+
 
 #spring:
 #  config:
