@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Slf4j
 @Controller
@@ -21,9 +22,16 @@ public class AuthorContoller {
     }
 
     @PostMapping("new")
-    public String createAuthor(@ModelAttribute("authorDTO") AuthorCreateRequestDTO authorDTO){
+    public String createAuthor(@ModelAttribute("authorDTO") AuthorCreateRequestDTO authorDTO,
+                               RedirectAttributes redirectAttr){
         log.info("Author Name: " + authorDTO.name());
         log.info("Author Description: " + authorDTO.description());
-        return "redirect:/author/new";
+        redirectAttr.addFlashAttribute("authorDTO", authorDTO);
+        return "redirect:/author/create-result";
+    }
+
+    @GetMapping("create-result")
+    public String DisplayCreateResult(Model model){
+        return "author/author-create-result";
     }
 }
