@@ -3,6 +3,12 @@ spring:
     name: book-catalog
   profiles:
     active: development
+  datasource:
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
 
 server:
   port: 8081
